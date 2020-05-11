@@ -8,7 +8,7 @@ using namespace std;
     x^y > y^x --> ylog(x) > xlog(y) --> x/log(x) < y/log(y)
     sort + thamlam + chat nhi phan;
     voi moi xlogx[i] tim vi tri id dau tien ma ylogy[id] > xlogx[i] bang chat nhi phan
-    res += (m-id);
+    
 */
 const int maxN = 1e5+5;
 const double inf = 1.0*1e9 ;
