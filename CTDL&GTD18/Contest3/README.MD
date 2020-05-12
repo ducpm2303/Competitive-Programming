@@ -41,7 +41,8 @@ Với mỗi xâu nhị phân thì cho ra một số , kiểm tra xem số đó c
 Mỗi lần loại bỏ , loại bỏ đi kí tự xuất hiện nhiều nhất trong mảng.
 Dùng hàng đợi ưu tiên
 # Bài 18
-Giả sử có phương trình 4y + 7z = n --> (4y + 7z)(mod 7) = n(mod 7)
+Giả sử có phương trình 
+4y + 7z = n --> (4y + 7z)(mod 7) = n(mod 7)
 -> 4y (mod 7) = n(mod 7) = x;
 Tính chất đồng dư : 4y = (x + 7*p) ( p >= 0 && x + 7*p <= n)
 Tìm ra cặp nghiệm y,z đầu tiên thỏa mãn phương trình trên.
