@@ -2,8 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+int n,m;
 struct dsu{
-    vector <int> par,rank;
+    vector < int > par,rank;
     int n;
     dsu(int m){n = m; par.resize(n+1) ; rank.resize(n+1);};
     void in(){
@@ -24,41 +25,39 @@ struct dsu{
         return true;
     }
 };
-int n,m;
-vector<pair<pair<int,int>,int>> edge;
+struct edge{
+    int u,v,w;
+};
+vector<edge> a;
 void Input(){
-    cin >> n >> m; edge.resize(m);
+    cin >> n >> m; a.resize(m);
     for(int i = 0; i < m; i++){
-        cin >> edge[i].first.first >> edge[i].first.second >> edge[i].second;
+        cin >> a[i].u >> a[i].v >> a[i].w;
     }
 }
-bool cmp(pair<pair<int,int>,int> a, pair<pair<int,int>,int> b){
-    if(a.second == b.second){
-        if(a.first.first == b.first.first) 
-            return a.first.second < b.first.second;
-        return a.first.first < b.first.first;
-    }
-    return (a.second < b.second);    
+bool cmp(edge x , edge y){
+    return x.w < y.w;
 }
+
 void Solve(){
-    dsu a = dsu(n); a.in();
-    sort(edge.begin(),edge.end(),cmp);
-    ll minwght = 0;
+    dsu b = dsu(n); b.in();
+    sort(a.begin(),a.end(),cmp);
+    int sum = 0;
     for(int i = 0; i < m; i++){
-        int u = edge[i].first.first;
-        int v = edge[i].first.second;
-        int w = edge[i].second;
-        if(a.join(u,v) == true){
-            minwght += w;
-        }
+       if(b.join(a[i].u,a[i].v) == false){
+            if(sum < 0){
+                cout << 1 << '\n';
+                return;
+            }
+       }
     }
-    cout << minwght << '\n';
+   
 }
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     int t = 1;
-    cin >> t;
+    //cin >> t;
     for (int i = 1; i <= t; i++){
         Input();
         Solve();

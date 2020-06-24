@@ -20,18 +20,23 @@ void Input(){
         a[v].push_back(u);
     }
 }
-void DFS(int u){
+void BFS(int u){
+    queue<int> q; q.push(u);
     vis[u] = 1;
-    for(auto v : a[u]){
-        if(vis[v] == 0){
-            res.push_back({u,v});
-            //cout << u << ' ' << v << '\n';
-            DFS(v);
+    while(!q.empty()){
+        int u1 = q.front(); q.pop();
+        for(auto v : a[u1]){
+            if(vis[v] == 0){
+                res.push_back({u1,v});
+                //cout << u << ' ' << v << '\n';
+                q.push(v);
+                vis[v] = 1;
+            }
         }
     }
 }
 void Solve(){
-    DFS(s);
+    BFS(s);
     if(res.size() != n - 1){
         cout << -1 << '\n';
     }else{

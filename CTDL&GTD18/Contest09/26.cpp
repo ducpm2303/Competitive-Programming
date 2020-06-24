@@ -2,36 +2,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-int par[1005], ranK[1005];
-int n,m;
-int Find(int u) {
-    if (par[u] != u) par[u] = Find(par[u]);
-    return par[u];
+const int N = 1005;
+int cha[N], Rank[N];
+map <pair<int,int>,int> cnt;
+bool flag = 0;
+void Init() {
+    for (int i=0; i<N; i++) {
+        cha[i] = i;
+        Rank[i] = 0;
+    }
 }
 
-void Join(int u, int v) {
+int Find(int u) {
+    if (cha[u] != u) cha[u] = Find(cha[u]);
+    return cha[u];
+}
+void join(int u, int v) {
     u = Find(u);
     v = Find(v);
     if (u == v) return;
-    if (ranK[u] == ranK[v]) ranK[u]++;
-    if (ranK[u] < ranK[v]) par[u] = v;
-    else par[v] = u;
+    if (Rank[u] == Rank[v]) Rank[u]++;
+    if (Rank[u] < Rank[v]) cha[u] = v;
+    else cha[v] = u;
 }
+int n,m;
 void Input(){
-    for (int i = 1; i <= n; i++) {
-        par[i] = i;
-        ranK[i] = 0;
+    cin >> n >> m;
+    Init();
+    for(int i = 1; i <= m; i++){
+        int u,v; cin >> u >> v;
+        cnt[{u,v}]++;
+        if(Find(u) == Find(v) && u != v){
+            //cout << u << ' ' << v << '\n';
+            flag = 1;
+        }else join(u,v);
     }
 }
 void Solve(){
-    cin >> n >> m;
-    bool cycle = false;
-    for(int i = 1; i <= m; i++){
-        int u,v; cin >> u >> v;
-        if(Find(u) == Find(v)) cycle = true;
-        Join(u,v);
+    for(auto z : cnt){
+        if(z.second >= 2 || z.first.first == z.first.second){
+            cout << "YES" << '\n';
+            return;
+        }
     }
-    cout << ((cycle == true)?"YES":"NO") << '\n';
+    cout << ((flag == 1)?"YES":"NO") << '\n';
 }
 int main(){
     ios::sync_with_stdio(false);

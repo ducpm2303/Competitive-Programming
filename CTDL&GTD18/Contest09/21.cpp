@@ -11,7 +11,7 @@ int points = 0, bridges = 0;
 set <pair<int,int>> mySet;
 void dfs(int u, int p) {
     int children = 0;
-    num[u] = low[u] = cnt++;
+    num[u] = low[u] = cnt++;+
     for(int v : a[u]) {
         if (num[v] == -1) {
             children++;

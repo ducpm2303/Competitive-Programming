@@ -7,7 +7,7 @@ int vis[1005];
 int n,m;
 bool cycle = false;
  
-void DFS(int u ,int par, int s) {
+void DFS(int u , int s) {
     vis[u] = 1;
     for(int v : ke[u]){
         if (vis[v] == 0) DFS(v,u);
