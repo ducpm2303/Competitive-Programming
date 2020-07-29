@@ -1,8 +1,5 @@
-//Code By PMD
 #include<bits/stdc++.h>
-#define faster() ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 using namespace std;
-typedef long long i64;
 int n,k;
 vector < int > a;
 vector < vector <int> > res;
@@ -11,48 +8,40 @@ void input(){
     a.resize(n); res.clear();
     for(int i = 0 ; i < n ; i++)
         cin >> a[i];
-
 }
 void Try(int i , int s , vector<int> mv){
-    if( i > n || s > k) return;
-    if ( s == k ){
+    if ( s == k ){ // nếu s = k đẩy vector hiện tại vào res
         res.push_back(mv);
         return;
     }
     int j = i + 1;
-    while((s + a[j] )<= k && j < n){
-        mv.push_back(a[j]);
-        Try(j,s+a[j],mv);
-        mv.pop_back();
+    while((s + a[j] ) <= k && j < n){ // điêu kiện s + a[j] <= k và j < n
+        mv.push_back(a[j]); // thử trường hợp a[j]
+        Try(j,s+a[j],mv); // Gọi đệ quy.
+        mv.pop_back(); // sau khi thử xong xoá a[j] khỏi cuối vector
         j++;
     }
 }
 void solve(){
-    sort(a.begin(),a.end());
+    sort(a.begin(),a.end()); 
     vector < int > move;
     Try(-1,0,move);
-    if( res.size() == 0 ){
+    if( res.size() == 0 ){ 
         cout << -1 << '\n';
         return;
     }
-    for(auto z : res){
+    for(int i = 0 ; i < res.size() ; i++){
         cout << '[';
-        for(int i = 0 ; i < z.size() ; i++){
-            cout << z[i];
-            if( i == z.size() - 1) cout << "]";
+        for(int j = 0 ; j < res[i].size() ; j++){
+            cout << res[i][j];
+            if( j == res[i].size() - 1) cout << "]";
             cout << ' ';
         }
     }
     cout << '\n';
 }
 int main(){
-    //freopen("input.txt","r",stdin);
-    //freopen("output.txt","w",stdout);
-    faster();
     int t=1; cin>>t;
     while(t--){ input();solve();}
-    cerr << "\nRunning is : " << 1.0*clock()/1000 ;
     return 0;
 }
-//Code By PMD
- 

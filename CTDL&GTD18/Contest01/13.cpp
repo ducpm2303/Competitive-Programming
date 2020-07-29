@@ -9,16 +9,22 @@ vector < string > res;
 void input(){
     cin >> n >> k; a.resize(n);
 }
+
+AAABA 
+AAA
+AAB
+ABA
+
 void check(){
     int ok = 0;
     for(int i = 0 ; i < n - k + 1 ; i++){ // tach thanh cac xau co do dai la k, i : 1 -> 3
         int cnt = 0;
-        for(int j = i ; j < i + k ; j++){ //
+        for(int j = i; j < i + k; j++){ //
             if( a[j] == 'A') cnt++;
         }
         if( cnt == k ) ok++;
     }
-    if ( ok == 1 ) res.push_back(a);
+    if (ok == 1) res.push_back(a);
 }
 void Try(int i){
     for(char j = 'A' ; j <= 'B' ; j++){

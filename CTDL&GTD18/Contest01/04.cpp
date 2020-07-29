@@ -11,7 +11,7 @@ void input(){
 void Try(int i){
     for(int j = 'A' ; j <= 'B' ; j++){
         a[i] = j;
-        if( i == n - 1 ) cout << a << ' ';
+        if(i == n - 1) cout << a << ' ';
         else Try(i+1);
     }
 }

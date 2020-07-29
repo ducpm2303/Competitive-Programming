@@ -1,0 +1,31 @@
+Loại 28,30,31,32,36,38,39. Khó :D
+Bài 19,20:
+Quay lui, với mỗi vector có kích thướng là n 
+tạo một vector mới kích thước là n -1 và xét.
+Bài 21:
+dùng hàm hoặc code tay 😊
+next_permutation(a.begin(),a.end()) == true/false
+
+Bài 22,23:
+với mỗi điểm có tọa độ x,y hiện tại kiểm tra các ô xung quanh xem có thể đi đến ko 
+và thực hiện Try(ô tiếp theo).
+
+Bài 25: tập con có tổng bằng k
+Gọi sum là tổng tất cả các phần tử trong A[].
+Nếu sum không chia hết cho 2, thì không thể chia thành 2 tập con bằng nhau được.
+Ngược lại đưa về bài toán tìm tập con có tổng bằng sum/2.
+
+Bài 26: thử đổi chỗ giữa 2 phần từ của xâu và cập nhập kết quả.
+Bài 27: note như code
+Bài 29: mỗi vị trí có 2 khả năng đi tiếp sang phải hoặc đi xuống(nhớ kiểm tra nằm trong ma trận)
+            đi đến vị trí cuối cùng tăng kết quả lên 1.
+Bài 33,34:
+Ý tưởng:
+Đầu tiên ta đặt quân hậu thứ nhất vào các cột trên hàng 1 ( có n cách đặt ).
+Thử đặt quân hậu 2 vào từng cột ở hàng 2 sao cho không bị quân hậu 1 khống chế. 
+Với mỗi vị trí của quân hậu này ta lại thử đặt quân hậu thứ ba vào các cột sao cho không bị các quân hậu trước khống chế.
+Sau khi đặt xong quân hậu thứ tám thì in ra một cách đặt.
+Bài 35: Tập con có tổng bằng s, sao cho có đúng k phần tử.
+Bài 37:
+Biểu diễn đồ thị dưới dạng ma trận kề ( matrix[u][v] = 1 nếu có cạnh nối giữa u và v)
+Với mỗi đỉnh u đang xét, duyệt qua tất cả các đỉnh kề của u ( gọi đỉnh kề là v thì matrix[u][v] = 1 ) và thực hiện đệ quy tìm đường đi dài nhất.

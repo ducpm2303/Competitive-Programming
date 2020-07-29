@@ -16,14 +16,13 @@ int test = 1 , MULTI_TEST = 1;
 int m[20][20];
 int vis[20][20] = {0};
 int n;
-vector < string > res;
-void Try(int x , int y , string s){
-    if(x > n || y > n || x <= 0 || y <= 0) return;
-    if( x == n && y == n){
+vector < vector<char> > res;
+void Try(int x , int y , vector<char> s){
+    if(x == n && y == n){
         res.push_back(s);
         return;
     }
-    if(m[x][y+1] == 1 && vis[x][y+1] == 0){
+    if(m[x][y+1] == 1 && vis[x][y+1] == 0){ // ben phai
         s.push_back('R');
         vis[x][y+1] = 1;
         Try(x,y+1,s);

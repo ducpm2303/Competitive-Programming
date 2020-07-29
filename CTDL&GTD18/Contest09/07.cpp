@@ -23,7 +23,7 @@ void Input(){
         int u,v;
         cin >> u >> v;
         ke[u].push_back(v);
-        ke[v].push_back(u);
+        //ke[v].push_back(u);
     }
 }
 void Solve(){

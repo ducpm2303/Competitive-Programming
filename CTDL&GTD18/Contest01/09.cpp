@@ -1,49 +1,41 @@
-//Code By PMD
-#include<bits/stdc++.h>
-#define faster() ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+/*author : mdp*/
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long i64;
-int n;
-void GrayCode(int n) 
-{ 
-    vector < string > arr; 
-    // n=1
-    arr.push_back("0"); 
-    arr.push_back("1"); 
-    int i, j; 
-    for (i = 2; i < (int)pow(2,n); i = i*2) 
-    { 
-    //coppy vector thanh 2 theo kieu phan chieu guong
-        for (j = i-1 ; j >= 0 ; j--) 
-            arr.push_back(arr[j]); 
-  	//them 0 vao cac so phia trc
-        for (j = 0 ; j < i ; j++) 
-            arr[j] = "0" + arr[j]; 
-  	//them 1 vao cac so phia sau
-        for (j = i ; j < 2*i ; j++) 
-            arr[j] = "1" + arr[j]; 
+typedef long long ll;
+int x[100],n;
+void Display(){
+    cout << x[1];
+    for(int i = 2; i <= n; i++){
+        int a = x[i]^x[i-1];
+        cout << a;
     }
-    string tmp = "";
-    for (i = 0 ; i < arr.size() ; i++ ) {
-        
-        cout << arr[i] << ' ';
-    }
-} 
-void input(){
-	cin >> n;
+    cout << ' ';
 }
-void solve(){
-	GrayCode(n);
-	cout << '\n';
+void Try(int i){
+    for(int j = 0; j <= 1; j++){
+        x[i] = j;
+        if(i == n){
+            Display();
+        }else{
+            Try(i+1);
+        }
+    }
+}
+void Input(){
+    cin >> n;
+}
+
+void Solve(){
+    Try(1);
 }
 int main(){
-	//freopen("input.txt","r",stdin);
-	//freopen("output.txt","w",stdout);
-	faster();
-	int t=1; cin>>t;
-	while(t--){ input();solve();}
-	cerr << "\nRunning is : " << 1.0*clock()/1000 ;
-	return 0;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t = 1;
+    //cin >> t;
+    for (int i = 1; i <= t; i++){
+        Input();
+        Solve();
+    }
+    return 0;
 }
-//Code By PMD
- 
