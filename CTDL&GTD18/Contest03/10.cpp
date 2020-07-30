@@ -21,7 +21,7 @@ void Input(){
         cin >> a[i];
 }   
 void Solve(){
-    priority_queue < int , vector<int> , greater<int> > q;
+    priority_queue <int,vector<int>,greater<int>> q;
     for(int i = 0 ; i < n ; i++) q.push(a[i]);
     ll res = 0;
     while(q.size() > 1){

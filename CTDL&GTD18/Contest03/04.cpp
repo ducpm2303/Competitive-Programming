@@ -15,6 +15,11 @@ typedef vector<ii> vpii;
 int test = 1 , MULTI_TEST = 1; 
 vi a;
 int n;
+/*
+1 2 3 4 5
+135
+24
+*/
 void Input(){
     cin >> n ; a.resize(n);
     for(int i = 0 ; i < n ; i++)

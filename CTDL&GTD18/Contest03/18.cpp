@@ -17,11 +17,19 @@ int n;
 void Input(){
     cin >> n;
 }   
+/*
+Giả sử có phương trình 
+4y + 7z = n --> (4y + 7z)(mod 7) = n(mod 7)
+-> 4y (mod 7) = n(mod 7) = x;
+Tính chất đồng dư : 4y = (x + 7*p) 
+(p >= 0 && x + 7*p <= n)
+Tìm ra cặp nghiệm y,z đầu tiên thỏa mãn phương trình 
+*/
 void Solve(){
     int x = n%7;
     int p = 0;
-    while( x + 7*p <= n){
-        if( (x+7*p)%4 == 0){
+    while(x + 7*p <= n){
+        if((x+7*p)%4 == 0){
             int y = (x+7*p)/4;
             int z = (n-y*4)/7;
             for(int i = 0 ; i < y ; i++) cout << 4 ;

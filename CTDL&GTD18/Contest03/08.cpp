@@ -38,7 +38,7 @@ void Solve(){
             tmp=i;
         }
     }
-    cout << ans<<endl;
+    cout << ans <<endl;
 }
 int main(){
     setIO();

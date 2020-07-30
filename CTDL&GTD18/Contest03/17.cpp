@@ -21,7 +21,7 @@ void Input(){
 void Solve(){
     map < char,int > cnt;
     for(int i = 0 ; i < s.length() ; i++) cnt[s[i]]++;
-    priority_queue < int,vi> q;
+    priority_queue <int,vi> q;
     for(auto z : cnt) q.push(z.second);
     while(k--){
         int x = q.top(); q.pop();

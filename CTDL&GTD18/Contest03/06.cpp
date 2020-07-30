@@ -15,21 +15,31 @@ typedef vector<ii> vpii;
 int test = 1 , MULTI_TEST = 1; 
 int n;
 vi a;
+/*
+
+*/
 void Input(){
     cin >> n; a.resize(n);
     for(int i = 0 ; i < n ; i++)
         cin >> a[i];
 }   
 void Solve(){
-    map < int , vi > pos;
-    vi b = a;
+    int pos[1005][2];
+    vector<int> b = a;
     sort(all(a));
+    /*
+    0 1 2 3 4 5 6
+    1 2 3 4 5 6 7
+    */
     for(int i = 0 ; i < n; i++){
-        pos[a[i]].push_back(i);
-        pos[a[i]].push_back(n-1-i);
+        pos[a[i]][0] = i;
+        pos[a[i]][1] = n - 1 - i;
     }
+    /*
+    1 6 3 4 5 7 2 
+    */
     for(int i = 0 ; i < n ; i++){
-        if( i!= pos[b[i]][0] && i != pos[b[i]][1] ){
+        if( i!= pos[b[i]][0] && i != pos[b[i]][1]){
             cout << "No" << '\n';
             return;
         }

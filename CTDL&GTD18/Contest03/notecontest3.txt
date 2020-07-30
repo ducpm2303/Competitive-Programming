@@ -1,0 +1,54 @@
+Loại bài 9,15,16
+Bài 1:Trừ dần những tờ tiền có giá trị lớn đến bé.
+Bài 2: 
+Tổng nhỏ nhất: đổi những số 6 thành 5.
+Tổng lớn nhất: đổi những số 5 thành 6.
+Bài 3:
+Sắp xếp tăng dần.
+Bài 4:
+Sắp xếp tăng dần.
+các chữ số ở vị trí chẵn cho vào số thứ nhất, lẻ cho vào số thứ 2.
+Bài 5:
+Sắp xếp tăng dần: tập con thứ nhất gồm min(n,n-k) số nhỏ nhất.
+tập con thứ 2 là tập còn lại.
+Bài 6:
+đặt vector b = a;
+Sắp xếp a tăng dần.
+lưu hai vị trí có thể của a[i].
+sau đó kiểm tra các vị trí của b.
+Bài 7:
+mảng a sắp xếp tăng dần, b sắp xếp giảm dần.
+Bài 8:
+sắp xếp tăng dần theo thời gian kết thúc.
+Bài 10,11:
+priority_queue <int,vector<int>,greater<int>> q;
+hàng đợi ưu tiên.
+Mỗi lần xét lấy hai sợi dây nhỏ nhất(top của hàng đợi)
+và push(tổng) vào hàng đợi.
+Bài 12: tính số lần xuất hiện lớn nhất. 
+so sánh với tổng của những cái còn lại.
+Bài 13:
+đếm chữ cái xuất hiện nhiều nhất.
+mặc định phải xếp cách đều nhau với khoảng cách là k.
+nên tìm xem vị trí cuối cùng của chữ cái đấy 
+có vượt quá size của xâu hay ko
+Công thức kiểm tra: (cnt-1)*k <= n - 1. (n là length của xâu).
+
+Bài 14:
+Sinh nhị phân (tối đa 2^18 xâu nhị phân).
+Với mỗi xâu sinh được được ứng với một số mới
+kiểm tra xem nó có phải số lập phương ko và cập nhập kết quả
+
+Bài 17:
+đếm các chữ số 
+push vào hàng đợi ưu tiên, sau đó trừ dần top của queue đi 1.
+
+Bài 18:
+Giả sử có phương trình 
+4y + 7z = n --> (4y + 7z)(mod 7) = n(mod 7)
+-> 4y (mod 7) = n(mod 7) = x;
+Tính chất đồng dư : 4y = (x + 7*p) 
+(p >= 0 && x + 7*p <= n)
+Tìm ra cặp nghiệm y,z đầu tiên thỏa mãn phương trình 
+
+Bài 19: Trừ dần phân số đến khi tử khác 1.

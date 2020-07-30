@@ -27,16 +27,10 @@ void Solve()
         cnt[s[i] - 'a']++;
     sort(cnt.begin(), cnt.end());
     int sum = 0;
-    for (int i = 24; i >= 0; i--)
-    {
-        sum += cnt[i];
-        if (sum + 1 >= cnt[25])
-        {
-            cout << 1 << endl;
-            return;
-        }
-    }
-    cout << -1 << endl;
+    for (int i = 24; i >= 0; i--) sum += cnt[i];
+    if (sum + 1 >= cnt[25])
+        cout << 1 << endl;
+    else cout << -1 << endl;
 }
 int main()
 {

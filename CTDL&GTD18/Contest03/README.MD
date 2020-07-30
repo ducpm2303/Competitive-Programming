@@ -44,7 +44,8 @@ Dùng hàng đợi ưu tiên
 Giả sử có phương trình 
 4y + 7z = n --> (4y + 7z)(mod 7) = n(mod 7)
 -> 4y (mod 7) = n(mod 7) = x;
-Tính chất đồng dư : 4y = (x + 7*p) ( p >= 0 && x + 7*p <= n)
+Tính chất đồng dư : 4y = (x + 7*p) 
+(p >= 0 && x + 7*p <= n)
 Tìm ra cặp nghiệm y,z đầu tiên thỏa mãn phương trình trên.
 # Bài 19
 Trừ dần phân số đến khi tử bằng 1. 

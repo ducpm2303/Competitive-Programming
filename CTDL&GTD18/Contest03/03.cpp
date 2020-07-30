@@ -25,7 +25,7 @@ void Solve(){
     ll res = 0;
     sort(all(a));
     for(ll i = 0 ; i < n ; i++){
-        res = (res + (1LL*a[i]*i)%mod)%mod;
+        res = (res + (a[i]*i)%mod)%mod;
     }
     cout << res << '\n';
 }
