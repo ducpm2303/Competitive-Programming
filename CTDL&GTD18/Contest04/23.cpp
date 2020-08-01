@@ -14,14 +14,32 @@ typedef vector<string> vs;
 typedef vector<ii> vpii;
 int test = 1 , MULTI_TEST = 1; 
 ll n,k;
- 
+/*
+1213121412131215121312141213121
+vị trí :
+1 -> 1 3  5  7  9  11 ...
+2 -> 2 6  10 14 18 22 ...
+3 -> 4 12 20 28 36 44 ...
+4 -> 8 24 40 56 72  .....
+5 -> 16 48 80 .......
+    32
+    64
+    ...
+ví dụ k = 15 -> 1
+k = 16
+i = 1.
+(k - 2^i) % 2^i.
+*/
+
 void Input(){
     cin >> n >> k;
- 
 }   
 void Solve(){
     ll i = 1;
-    while( (k-i) % (i*2) != 0 ) i <<= 1;
+    while((k-i)%(i*2) != 0){
+        i *= 2;
+    }
+    cout << i << '\n';
     cout << log2(i) + 1 << '\n';
  
 }

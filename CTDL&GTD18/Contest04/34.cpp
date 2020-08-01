@@ -22,13 +22,15 @@ void Input(){
     for(auto &x : b) cin >> x;
 }   
 void Solve(){
-    map < int , ll > res;
+    int cnt[1000] = {0};
     for(int i = 0 ; i < n ; i++){
         for(int  j = 0 ; j < m ; j++){
-            res[i+j] += 1ll*a[i]*b[j];
+            cnt[i+j] += a[i]*b[j];
         }
     }
-    for(auto z : res) cout << z.second << ' ';
+    for(int i = 0; i < n + m - 2; i++){
+        cout << cnt[i] << ' ';
+    }
     cout << '\n';
 }
 int main(){

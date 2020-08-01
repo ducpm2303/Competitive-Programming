@@ -14,6 +14,11 @@ typedef vector<string> vs;
 typedef vector<ii> vpii;
 int test = 1 , MULTI_TEST = 1; 
 string a,b;
+/*
+    n = 0
+    0110
+    1*2^1 + 1*2^2
+*/
 ll cv(string s){
     ll sum = 0 ;
     for(int i = 0 ; i < s.length() ; i++){
@@ -26,8 +31,8 @@ void Input(){
     cin >> a >> b;
 }   
 void Solve(){
-    while(a[0] == '0') a.erase(0,1);
-    while(b[0] == '0') b.erase(0,1);
+    // while(a[0] == '0') a.erase(0,1);
+    // while(b[0] == '0') b.erase(0,1);
     cout << cv(a)*cv(b) << '\n';
 }
 int main(){

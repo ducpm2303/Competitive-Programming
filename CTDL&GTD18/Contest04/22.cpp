@@ -22,14 +22,14 @@ void Input(){
 }   
 void Solve(){
     int l = 0 , r = n - 1, mid;
-    while( l <= r){
-        mid = l+r >> 1;
+    while(l <= r){
+        mid = (l+r)/2;
         if(a[mid] == k){
             cout << mid + 1<< '\n';
             return;
         }
-        else if ( a[mid] > k) r = mid - 1;
-        else l = mid + 1;
+        else if (a[mid] > k) r = mid - 1;
+        else l = mid + 1; // a[mid] < k
     }
     cout << "NO" << '\n';
 }

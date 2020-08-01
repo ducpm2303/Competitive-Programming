@@ -19,11 +19,22 @@ void Input(){
     cin >> n ; a.resize(n);
     for(auto &x : a) cin >> x;
 }   
+/*
+
+*/
 void Solve(){
     if(*max_element(all(a)) < 0){
         cout << *max_element(all(a)) << '\n';
         return;
     }
+    /*
+    -2 -5 6 -2 -3 1 5 -6 
+    sum = -2 < 0 -> sum = 0;
+    sum = -5 < 0 -> sum = 0; 
+    sum = 6 > 0 , res = max(6,0) = 6;
+    sum = 6 + -2 = 4 > 0 ... 
+
+    */
     ll res = 0,sum = 0;
     for(int i = 0 ; i < n ; i++){
         sum += a[i];

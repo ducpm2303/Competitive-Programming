@@ -16,7 +16,7 @@ void Input(){
 void Solve(){
     int n = s.length();
     ll res = 0;
-    for(int len = n ; len >= 1 ; len--){
+    for(int len = 1 ; len <= n ; len++){
         for(int i = 0 ; i <= n - len ; i++){
             string a = s.substr(i,len);
             res += strtoNum(a);

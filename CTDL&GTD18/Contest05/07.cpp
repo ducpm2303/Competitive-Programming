@@ -7,6 +7,11 @@ int n,k;
 void Input(){
     cin >> n >> k;
 }
+/*
+k = 3
+dp[4] = dp[1] + dp[2] + dp[3].
+dp[i] = dp[i-1] + dp[i-2] + ... dp[i-k]
+*/
 void Solve(){
     vector<ll> dp(n+1,0);
     dp[0] = 1; 
