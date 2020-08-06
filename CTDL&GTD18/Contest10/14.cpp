@@ -31,9 +31,9 @@ void dijkstra(i64 s){                      // xuat phat tu dinh s
 		du = q.top().second;
 		q.pop();
 		if(du != d[u]) continue;
-		for(auto x : ke[u]){ // duyet dinh ke cua u
-			v = x.first ;
-			uv = x.second;
+		for(int i = 0; i < ke[u].size(); i++){ // duyet dinh ke cua u
+			v = ke[u][i].first ;
+			uv = ke[u][i].second;
 			if (d[v] > d[u] + uv){
 				d[v] = d[u] + uv;       
 				q.push({v,d[v]});

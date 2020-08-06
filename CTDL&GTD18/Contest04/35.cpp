@@ -17,7 +17,9 @@ int n;
 vi a;
 void Input(){
     cin >> n ; a.resize(n);
-    for(auto &x : a) cin >> x;
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+    }
 }   
 /*
 

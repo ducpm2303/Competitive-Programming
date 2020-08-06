@@ -9,7 +9,7 @@ char mp[100][100];
 int vis[100][100] = {0};
 int k,m,n;
 vector < string > a;
-vector <vector<char>> res;
+vector < vector<char> > res;
 bool inside(int u , int v){
     return ( 1 <= u && u <= n && 1 <= v && v <= m);
 }

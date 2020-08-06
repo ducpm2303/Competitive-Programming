@@ -19,10 +19,12 @@ void Input(){
     cin >> k >> s;
 }   
 void Solve(){
-    map < char,int > cnt;
-    for(int i = 0 ; i < s.length() ; i++) cnt[s[i]]++;
+    int cnt[26] = {0};
+    for(int i = 0 ; i < s.length() ; i++) cnt[s[i]-'A']++;
     priority_queue <int,vi> q;
-    for(auto z : cnt) q.push(z.second);
+    for(int i = 0; i < 26; i++){
+        if(cnt[i] != 0) q.push(cnt[i]);
+    }
     while(k--){
         int x = q.top(); q.pop();
         q.push(x-1);

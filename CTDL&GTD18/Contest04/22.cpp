@@ -18,7 +18,7 @@ vi a;
 void Input(){
     cin >> n >> k;
     a.resize(n);
-    for(auto &x : a) cin >> x;
+    for(int i = 0; i < n; i++) cin >> a[i];
 }   
 void Solve(){
     int l = 0 , r = n - 1, mid;

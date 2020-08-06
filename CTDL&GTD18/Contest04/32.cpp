@@ -32,16 +32,18 @@ void solve()
 	i64 res = 0, d = 1;
 	for (int i = 0; i <= N; i++)
 		f[i] = 0;
-	map<i64, vector<int>> Down;
+	map<i64, vector<int> > Down;
 	for (int i = 1; i <= n; i++)
 	{
 		cin >> a[i];
 		Down[a[i]].push_back(i);
 	}
-	for (auto z : Down)
+	map<i64, vector<int> > :: iterator it;
+	for (it = Down.begin(); it != Down.end(); it++)
 	{
-		for (auto zz : z.second)
-			a[zz] = d;
+		for (int i = 0; i < it->second.size(); i++){
+			a[it->second[i]] = d;
+		}
 		d++;
 	}
 	for (int i = n; i >= 1; i--)

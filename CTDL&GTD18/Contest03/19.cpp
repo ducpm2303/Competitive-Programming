@@ -11,6 +11,9 @@ void Solve(){
     /*
         t/m 1/x;
     */
+    ll gcd = __gcd(t,m);
+    t = t/gcd;
+    m = m/gcd;
     long long x = 2;
     while(t != 1){
         while(t*x <= m) x++;
@@ -22,13 +25,13 @@ void Solve(){
         m = m/gcd;
         cout << 1 << '/' << x << " + ";
     }
-    cout << 1 << '/' << m;
+    cout << 1 << '/' << m << '\n';
 }
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
     int t = 1;
-    //cin >> t;
+    cin >> t;
     for (int i = 1; i <= t; i++){
         Input();
         Solve();

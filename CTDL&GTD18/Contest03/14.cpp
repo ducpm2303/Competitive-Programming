@@ -23,11 +23,12 @@ void Input(){
     x.resize(n);
 }
 bool BS(ll sum){
-    ll l = 0 , r = 1e6 + 5 , mid , ans = 0 ;
+    ll l = 0 , r = 1e6 + 5 , mid;
     while(l <= r){
-        mid = (l+ r)/2 ;
+        mid = (l + r)/2 ;
+        //cout << mid << '\n';
         if( mid*mid*mid > sum) r = mid - 1;
-        if( mid*mid*mid == sum) return true;
+        else if( mid*mid*mid == sum) return true;
         else l = mid + 1;
     }
     return false;
@@ -37,7 +38,10 @@ void update(){
     for(int i = 0 ; i < n ; i++){
         if( x[i] == 1) sum = sum*10 + (s[i]-'0');
     }
-    if(BS(sum) == true) res = max(res,sum);
+    //cout << sum << '\n';
+    if(BS(sum) == true){
+        res = max(res,sum);
+    }
 }
 void Try(int i){
     for(int j = 0 ; j <= 1 ; j++){
@@ -46,11 +50,7 @@ void Try(int i){
         else Try(i+1);
     }
 }
-/*
-    4125
 
-    
-*/
 void Solve(){
     Try(0);
     cout << ((res == 0)?-1:res )<< '\n';

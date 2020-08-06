@@ -12,7 +12,7 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef vector<string> vs;
 typedef vector<ii> vpii;
-int test = 1 , MULTI_TEST = 0; 
+int test = 1 , MULTI_TEST = 1; 
 int n;
 const ll mod = 1e9+7;
 vll a;
@@ -28,8 +28,9 @@ void Solve(){
     while(q.size() > 1){
         ll x = q.top() ; q.pop();
         ll y = q.top() ; q.pop();
-        q.push((x+y)%mod);
-        res = (res + (x+y)%mod)%mod;
+        ll val = (x+y)%mod;
+        q.push(val);
+        res = (res + x + y)%mod;
     }
     cout << res << '\n';
 }

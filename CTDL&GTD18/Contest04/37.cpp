@@ -21,8 +21,8 @@ void Input()
 {
     cin >> n >> x;
     a.resize(n);
-    for (auto &z : a)
-        cin >> z;
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
 }
 void Solve()
 {

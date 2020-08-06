@@ -12,7 +12,7 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef vector<string> vs;
 typedef vector<ii> vpii;
-int test = 1 , MULTI_TEST = 0; 
+int test = 1 , MULTI_TEST = 1; 
 string s;
 ll k;
 ll Try(ll n){
@@ -29,7 +29,7 @@ void Solve(){
 	while(n < k)
 		n*=2;
 	long long index = Try(n);
-	cout<<s[index];
+	cout<<s[index] << '\n';
 }
 int main(){
     setIO();

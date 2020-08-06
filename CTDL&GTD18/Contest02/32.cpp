@@ -58,8 +58,8 @@ void solve(){
     }
     Try(-1,_div);
     set <string>::iterator pos;  
-    for(pos = res.begin() ; pos < res.end() ; pos++)
-        cout << pos << ' ';
+    for(pos = res.begin() ; pos != res.end() ; pos++)
+        cout << *pos << ' ';
     cout << '\n';
 }
 int main(){

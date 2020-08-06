@@ -18,8 +18,8 @@ int n,m;
 void Input(){
     cin >> n >> m;
     a.resize(n) ; b.resize(m);
-    for(auto &x : a) cin >> x;
-    for(auto &x : b) cin >> x;
+    for(int i = 0; i < n; i++ ) cin >> a[i];
+    for(int i = 0; i < m; i++ ) cin >> b[i];
 }   
 void Solve(){
     int cnt[1000] = {0};
@@ -28,7 +28,7 @@ void Solve(){
             cnt[i+j] += a[i]*b[j];
         }
     }
-    for(int i = 0; i < n + m - 2; i++){
+    for(int i = 0; i <= n + m - 2; i++){
         cout << cnt[i] << ' ';
     }
     cout << '\n';

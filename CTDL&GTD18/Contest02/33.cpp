@@ -27,7 +27,11 @@ void Try(int i) {
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    cin >> n;
-    Try(1);
-    cout << ans;   
+    int t; cin >> t;
+    while(t--){
+        cin >> n;
+        ans = 0;
+        Try(1);
+        cout << ans << '\n';  
+    } 
 }

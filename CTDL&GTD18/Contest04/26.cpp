@@ -12,30 +12,31 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef vector<string> vs;
 typedef vector<ii> vpii;
-int test = 1 , MULTI_TEST = 0;
+int test = 1 , MULTI_TEST = 1;
 int k;
 string a, b; 
 void Input(){
     cin >> k >> a >> b;
 }   
 void Solve(){
-    int n = 0;
-   	int m = 0;
+    ll n = 0;
+   	ll m = 0;
    	for (int i = 0 ; i < a.length(); i++) {
    		n = n * k + (a[i] - '0');
    	}
    	for (int i = 0 ; i < b.length(); i++) {
    		m = m * k + (b[i] - '0');
    	}
-   	int res = n + m;
+   	ll res = n + m;
    	vi ans;
-   	while (res) {
+   	while (res != 0) {
    		ans.push_back(res % k);
    		res /= k;
    	}
-   	for (int i = ans.size() - 1 ; i >=0; i--) {
+   	for (int i = ans.size() - 1; i >=0; i--) {
    		cout << ans[i];
    	}
+	cout << '\n';
 }
 int main(){
     setIO();
