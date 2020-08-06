@@ -18,7 +18,7 @@ void Input(){
 }
 void Solve(){
 
-    queue<pair<pair<int,int>,int>>q;
+    queue< pair<pair<int,int>,int> >q;
     q.push({{xd,yd},0}); vis[xd][yd] = 1;
     int mincost = 1e9;
     while(!q.empty()){

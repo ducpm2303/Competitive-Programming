@@ -1,0 +1,22 @@
+Loại 11,12,14,16,20
+3 bài đầu if else
+Bài 4: priority _queue
+Bài 5: chuyển cơ số 10 sang cơ số 2.
+Bài 6: đã nói ở contest 1.
+Bài 7,8: 
+    Quay lui tìm tất cả các số BDN lưu vào một mảng(xử lý trước bộ test)
+    Lưu ý: tìm các số nhỏ hơn 2^64 / 10.
+Bài 9:
+    mỗi giá trị x kiểm tra xe mcos đi được đến x - 1 và x*2 hay ko
+Bài 10: 
+    mỗi giá trị m push các ước của m và m - 1 vào
+Bài 13:
+    viết hàm con kiểm tra số thỏa mãn
+    Duyệt từ l đến r: tìm tất cả các số thỏa mãn từ hàm con.
+Bài 15:
+    hàng, cột, số bước ít nhất để từ vị trí ban đầu đến được vị trí đó
+    ví dụ x,y,z
+    pair< pair<int,int>,int > 
+    tại mỗi vị trí kiểm tra xem có thể đi được đến vị trí tiếp theo hay ko
+Bài 17,18: khá khoai :v
+

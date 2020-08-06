@@ -36,4 +36,4 @@ Loại bài 3,8
     mỗi bước chèn, sort lại từ đầu đến vị trí đó.
 -Bài 29:
     so sánh và đổi chỗ trực tiếp 2 phần tử liên tiếp
-    Lặp đến khi nào mảng đã được sắp xếp
+    Lặp đến khi nào mảng đã được sắp xế

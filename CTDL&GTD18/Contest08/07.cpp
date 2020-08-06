@@ -6,6 +6,7 @@ vector <ll> res;
 ll n;
 ll maxX = pow(2,64);
 void Try(ll i){
+    
     res.push_back(i);
     if(i < maxX/10){
         Try(i*10);

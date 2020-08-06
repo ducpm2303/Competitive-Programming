@@ -6,13 +6,23 @@ ll s,t;
 void Input(){
     cin >> s >> t;
 }
+/*
+    tại mỗi một số
+    1 -> 2 -> 
+        2 -> 4 -> 3 -> 6
+            4 -> 8
+
+*/          
 void Solve(){
-    map<ll,int> vis;
-    queue <pair<ll,int>> q;
-    q.push({s,0}); vis[s] = 1;
+    int vis[200005] = {0};
+    queue < pair<ll,int> > q;
+    // pair first là giá trị , second là số bước biến đổi từ s đến giá trị đó
+    q.push(make_pair(s,0)); 
+    vis[s] = 1;
+    // 2 -> 1
     while(!q.empty()){
-        auto x = q.front(); q.pop();
-        if(x.first == t){
+        pair<ll,int> x = q.front(); q.pop();
+        if(x.first == t){ // nếu giá trị đang xét bằng t
             cout << x.second << '\n';
             return;
         }

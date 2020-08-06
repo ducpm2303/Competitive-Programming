@@ -18,18 +18,22 @@ void Input(){
     }
 }
 void Solve(){
-
-    queue<pair<pair<int,int>,int>>q;
+    /*
+        hàng, cột, số bước ít nhất để từ vị trí ban đầu đến được vị trí đó
+        ví dụ x,y,z
+        tuple<int,int,int>
+        pair< pair<int,int>,int > 
+    */
+    queue< pair<pair<int,int>,int> >q;
     q.push({{1,1},0}); vis[1][1] = 1;
-    int minstep = 1e9;
     while(!q.empty()){
-        int x = q.front().first.first;
-        int y = q.front().first.second;
-        int z = q.front().second;
+        int x = q.front().first.first; // hang
+        int y = q.front().first.second; // cot
+        int z = q.front().second; //số bước ít nhất để từ vị trí ban đầu đến được vị trí đó
         q.pop();
         if(x == n && y == m){
-            minstep = min(minstep,z);
-            continue;
+            cout << z << '\n';
+            return;
         }
         //cout << x << ' ' << y << '\n';
         if(inside(x,y+a[x][y]) && vis[x][y+a[x][y]] == 0){
@@ -41,8 +45,7 @@ void Solve(){
             q.push({{x+a[x][y],y},z+1});
         }
     }
-    if(minstep == 1e9) cout << -1 << '\n';
-    else cout << minstep << '\n';
+    cout << -1 << '\n';
 }
 int main(){
     ios::sync_with_stdio(false);

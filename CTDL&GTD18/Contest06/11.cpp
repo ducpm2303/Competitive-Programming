@@ -18,13 +18,15 @@ void input(){
     5
 */
 void solve(){
-    long long res = LLONG_MAX;
+    long long res = 1e18;
     long long ans ;
     for(int i = 0 ; i < n - 1 ; i++){
         for(int j = i + 1 ; j < n ; j++){
             long long tmp = a[i] + a[j];
-            if(abs(tmp) < res){
-                res = abs(tmp);
+            long long tmp1 = tmp;
+            if(tmp1 < 0) tmp1 *= -1;
+            if(tmp1 < res){
+                res = tmp1;
                 ans = tmp;
             }
         }

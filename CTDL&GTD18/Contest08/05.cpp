@@ -7,12 +7,14 @@ void Input(){
     cin >> n;
 }
 void Solve(){
+
+
     for(int i = 1; i <= n; i++){
         string bin;
         int x = i;
         while(x != 0){
             bin += x%2 + '0';
-            x >>= 1;
+            x /= 2;
         }
         reverse(bin.begin(),bin.end());
         cout << bin << ' ';

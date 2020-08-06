@@ -12,7 +12,7 @@ void Input(){
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= m; j++){
             cin >> a[i][j];
-            c[i][j] = -1;
+            c[i][j] = 0;
         }
     }
 }
@@ -20,7 +20,7 @@ bool inside(int x, int y){
     return (1 <= x && x <= n && 1 <= y && y <= m);
 }
 void Solve(){
-    queue<pair<pair<int,int>,int>>q;
+    queue< pair<pair<int,int>,int> >q;
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= m; j++){
             if(a[i][j] == 2) q.push({{i,j},0});
@@ -30,17 +30,19 @@ void Solve(){
         int u = q.front().first.first;
         int v = q.front().first.second;
         int cost = q.front().second;
+        // u,v đang xét là hạt đã nảy mầm (a[u][v] = 2)
         q.pop();
         for(int i = 0 ; i < 4; i++){
             int x = u + dx[i];
             int y = v + dy[i];
-            if(inside(x,y) && a[x][y] == 1){
-                a[x][y] = -1;
+            if(inside(x,y) && a[x][y] == 1){ 
+                a[x][y] = 2;
                 c[x][y] = cost + 1;
                 q.push({{x,y},cost+1});
             }
         }
     }
+    
     int maxcost = 0;
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= m; j++){
@@ -48,9 +50,11 @@ void Solve(){
                 cout << -1 << '\n';
                 return;
             }
-            if(a[i][j] == -1){
-                maxcost = max(maxcost,c[i][j]);
-            }
+        }
+    }
+     for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= m; j++){
+            maxcost = max(c[i][j],maxcost);
         }
     }
     cout << maxcost << '\n';
