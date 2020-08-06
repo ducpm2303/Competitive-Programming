@@ -13,14 +13,20 @@ void input(){
     for ( int i = 0 ; i < n ; i ++)
         cin >> a[i];
 }
- 
+/*
+    -3 
+    5
+*/
 void solve(){
     long long res = LLONG_MAX;
     long long ans ;
     for(int i = 0 ; i < n - 1 ; i++){
         for(int j = i + 1 ; j < n ; j++){
             long long tmp = a[i] + a[j];
-            if( abs(tmp) < res) res = abs(tmp) , ans = tmp;
+            if(abs(tmp) < res){
+                res = abs(tmp);
+                ans = tmp;
+            }
         }
     }
     cout << ans << '\n';

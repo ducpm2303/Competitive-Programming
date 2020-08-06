@@ -12,10 +12,18 @@ void Input(){
 void Solve(){
     cout << "Buoc " << 0 << ": " << a[0] << '\n';
     int step = 1;
-    for(int i = 1 ; i < n  ; i++ , step++){
+    /*
+        0 1 2 3 4 
+        5 7 3 4 2
+        5
+        5 7
+        3 5 7
+
+    */
+    for(int i = 1 ; i < n  ; i++){
         int tmp = a[i];
         int j = i - 1;
-        while( a[j] > tmp && j >= 0){
+        while(a[j] > tmp && j >= 0){
             a[j+1] = a[j];
             j--;
         }
@@ -24,6 +32,7 @@ void Solve(){
         for(int i = 0 ; i <= step ; i++)
             cout << a[i] << ' ';
         cout << '\n';
+        step++;
     }
     
 }

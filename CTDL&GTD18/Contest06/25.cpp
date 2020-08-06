@@ -16,8 +16,8 @@ void input(){
 void solve(){
     sort(a,a+n);
     int tmp = a[0];
-    for ( int i = 1 ; i < n ; i ++){
-        if ( a[i] != tmp){
+    for (int i = 1 ; i < n ; i ++){
+        if (a[i] != tmp){
             cout << tmp << ' ' << a[i] << endl;
             return;
         }

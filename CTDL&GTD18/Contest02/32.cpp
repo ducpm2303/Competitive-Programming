@@ -57,7 +57,9 @@ void solve(){
         return ;
     }
     Try(-1,_div);
-    for(auto z : res) cout << z << ' ';
+    set <string>::iterator pos;  
+    for(pos = res.begin() ; pos < res.end() ; pos++)
+        cout << pos << ' ';
     cout << '\n';
 }
 int main(){

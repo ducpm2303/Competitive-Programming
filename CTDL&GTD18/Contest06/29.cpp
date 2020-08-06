@@ -10,16 +10,27 @@ void Input(){
         cin >> a[i];
 }
 void Solve(){
+    /*
+    4
+    5 3 2 7
+    3 2 5 7
+    2 3 5 7
+    
+    */
     int step = 1;
-    for(int i = 0 ; i < n - 1 ; i++ , step++){
+    for(int i = 0 ; i < n; i++){
         bool ok = false;
-        for(int j = 0  ; j < n - 1; j++){
-            if( a[j] > a[j+1]) ok = true, swap(a[j],a[j+1]);
+        for(int j = 0 ; j < n - 1; j++){
+            if(a[j] > a[j+1]){
+                ok = true;
+                swap(a[j],a[j+1]);
+            }
         }
-        if( ok == false) break;
+        if(ok == false) break;
         cout << "Buoc " << step << ": ";
         for(int i = 0 ; i < n ; i++) cout << a[i] << ' ';
         cout << '\n';
+        step++;
     }
     
 }

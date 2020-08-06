@@ -11,14 +11,14 @@ const int maxN = 1e5+5;
 int a[maxN];
 int cnt[maxN] = {0};
 bool cmp(int x , int y){
-    if( cnt[x] == cnt[y]) return ( x < y);
-    else return ( cnt[x] > cnt[y]);
+    if(cnt[x] == cnt[y]) return (x < y);
+    else return (cnt[x] > cnt[y]);
 }
 void input(){
     cin >> n ;
     for(int i = 0 ; i < n;  i++)
         cin >> a[i];
-    memset(cnt,0,sizeof cnt);
+    memset(cnt,0,sizeof cnt); // các phần tử mảng cnt = 0
 }
 void solve(){
     for(int i = 0 ; i < n ; i++) cnt[a[i]]++;

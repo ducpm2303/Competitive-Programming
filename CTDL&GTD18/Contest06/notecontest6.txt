@@ -1,0 +1,39 @@
+Loại bài 3,8
+-Bài 1: sort xong đưa dần các phần tử lớn bé.
+-Bài 2:
+    cmp co thu tu
+    - dau tien la sap xep theo tri tuyet doi x - a[i]
+    - Nếu 2 trị tuyệt đối bằng nhau xét ưu tiền vị trí xuất hiện.
+-Bài 4,5:
+    Dùng 2 mảng đánh dấu, đánh dấu các phần tử xuất hiện trong a,b là 1.
+    for từ 0 đến 10^5 : 
+    -nếu da[i] == 1 || db[i] == 1 cho vào mảng hợp
+    -nếu nếu da[i] == 1 && db[i] == 1 cho i vào mảng giao
+- Bài 9:
+    vì n <= 100 nên dùng 2 vòng for đếm các cặp a[i] + a[j] == k.
+-Bài 10:
+    nhập giá trị vào là một string luôn.
+    duyệt hết độ dài của từng string: chữ số nào xuất hiện thì đánh dấu lại.
+-Bài 11:
+    2 vòng for: tìm tổng của các cặp a[i], a[j] và so sánh với kết quả.
+-Bài 12: sắp xếp rồi đưa dần k phần tử lớn nhất từ cuối về.
+-Bài 13: Đếm số lần số x xuất hiện trong mảng.
+-Bài 14: Sàng nguyên tố
+    For từ 1 đến n/2: nếu prime[i] == 0 &&  prime[n-i] == 0 (i và n - i là số nguyên tố)
+    thì in ra cặp đầu tiên và break;
+-Bài 15,16: sort
+-Bài 17: tìm lớn nhất của a và nhỏ nhất của b(nhiều cách)
+-Bài 18: Nhập thành 1 mảng rồi sort
+-Bài 19: Đánh dấu các phần tử của mảng Lại 
+    for từ min(a) đến max(a): nếu b[i] == 0 res ++
+-Bài 20: có thể ko vào 
+-Bài 21 - 25: dễ 
+-Bài 26:
+    2 vòng for đổi chỗ trực tiếp a[i] và a[j] nếu a[i] > a[j]
+-Bài 27:
+    2 vòng for : với mỗi a[i] tìm a[j] nhỏ nhất (j > i) và đổi chỗ
+-Bài 28:
+    mỗi bước chèn, sort lại từ đầu đến vị trí đó.
+-Bài 29:
+    so sánh và đổi chỗ trực tiếp 2 phần tử liên tiếp
+    Lặp đến khi nào mảng đã được sắp xếp

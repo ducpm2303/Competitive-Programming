@@ -27,7 +27,7 @@ void solve(){
 	int flag = 0;
 	for( int i = 2 ; i <= n/2 ; i++){
         //cout <<  i << ' ' << n - i << endl;
-		if ( isPrime[i] == 0 && isPrime[n-i] == 0 ){
+		if (isPrime[i] ==0 && isPrime[n-i] == 0 ){
 			cout << i << ' ' << n - i << endl;
 			flag = 1;
 			break;

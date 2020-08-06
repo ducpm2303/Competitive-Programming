@@ -16,19 +16,17 @@ void input(){
 }
 
 void solve(){
-    pair< int,int > cnt[10];
-    for(int i = 0 ; i < 10 ; i++){
-        cnt[i].first = 0 , cnt[i].second = i ;
-    }
-    for(int i = 0 ; i < n ; i++){
-        for(int j = 0 ; j < a[i].length() ; j++){
-            cnt[a[i][j] - '0'].first++;
+    int cnt[10] = {0};
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < a[i].length(); j++){
+            int x = a[i][j] - '0';
+            cnt[x]++;
         }
     }
-    for(int i = 0 ; i < 10 ; i++)
-        if( cnt[i].first != 0 ) cout << cnt[i].second << ' ';
-    
-    cout << endl;
+    for(int i = 0; i < 10; i++){
+        if(cnt[i] != 0) cout << i << ' ';
+    }
+    cout << '\n';
 }
 int main(){
     int t=1; 

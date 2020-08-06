@@ -15,7 +15,7 @@ void input(){
 void solve(){
 	sort(a,a+n);
     int id = n - 1;
-    while(k != 0 ){
+    while(k != 0){
         cout << a[id] << ' ';
         id--;
         k--;

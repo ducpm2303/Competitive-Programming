@@ -10,13 +10,13 @@ void Input(){
         cin >> a[i];
 }
 void Solve(){
+    cout << "Buoc " << 0 << ": " << a[0] << '\n';
     int step = 1;
-    for(int i = 0 ; i < n - 1 ; i++){
-        for(int j = i + 1 ; j < n ; j++){
-            if(a[i] > a[j]) swap(a[i],a[j]);
-        }
-        cout << "Buoc " << step << ": ";
-        for(int i = 0 ; i < n ; i++) cout << a[i] << ' ';
+    for(int i = 1 ; i < n  ; i++){
+        sort(a.begin(),a.begin()+i+1);
+        cout << "Buoc " << step << ": " ;
+        for(int i = 0 ; i <= step ; i++)
+            cout << a[i] << ' ';
         cout << '\n';
         step++;
     }

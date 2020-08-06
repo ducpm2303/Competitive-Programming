@@ -9,7 +9,7 @@ void Input(){
 	for(int i = 0 ; i < n ; i++) cin >> a[i];
 }
 void Solve(){
-	stable_sort(a.begin(),a.end());
+	sort(a.begin(),a.end());
 	for(int i = 0; i < n; i++)
 		cout << a[i] << ' ';
 	cout << '\n';

@@ -18,11 +18,13 @@ void input(){
 void solve(){
 	sort(b,b+n);
     int l = 0 , r = n - 1;
-    while (l < n  && a[l] == b[l])l++;
-    while (r >= 0 && a[r] == b[r])r--;
-    l = min(l, n-1);
-    r = max(r, 0);
-    cout <<l << ' ' << max(r, l)<< '\n'; 
+    /*
+    A 1 7 4 3 2 9
+    B 1 2 3 4 7 9
+    */
+    while (l < n  && a[l] == b[l]) l++;
+    while (r >= 0 && a[r] == b[r]) r--;
+    cout << l + 1 << ' ' << max(r, l) + 1<< '\n'; 
 }
 int main(){
     int t=1; 

@@ -66,7 +66,7 @@ void Solve(){
         cout << -1 << '\n';
         return;
     }
-    for(auto x : res) cout << x << ' ';
+    for(int i = 0; i < res.size(); i++) cout << res[i] << ' ';
     cout << '\n';
 }
 int main(){

@@ -24,7 +24,7 @@ void Try(int i , int sum , vector < ii > mv){
             for(int zz = 1 ; zz <= pos->second ; zz++){
                 cout << pos->first;
                 if(zz == pos->second  && pos == (mv.end() - 1) ) cout << ']';
-                cout << ' ';
+                else cout << ' ';
             }
         }
         return;

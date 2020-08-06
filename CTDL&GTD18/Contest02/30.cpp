@@ -49,7 +49,7 @@ void Input(){
     res.clear();
 }   
 void Solve(){
-    int pos = lower_bound(all(Prime),p) - Prime.begin();
+    int pos = upper_bound(all(Prime),p) - Prime.begin();
     vector < int > move;
     Try(pos-1,n,0,move);
     cout << res.size() << '\n';

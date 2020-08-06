@@ -22,7 +22,7 @@ int main(){
 	int t = 1;
 	cin >> t; 
 	while(t--){
-        input() ; 
+        input(); 
         solve();
     }
 	return 0;

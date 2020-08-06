@@ -14,6 +14,9 @@ void input(){
 }
 
 void solve(){
+    /*
+    
+    */
     int b[maxN] = {0};
     for(int i = 0 ; i < n ; i++)
        b[a[i]] = 1;

@@ -17,6 +17,11 @@ void input(){
 }
 void solve(){
     sort(a,a+n);
+    /*
+    5 3
+    1 2 3 4 10
+   
+    */
     i64 res = 0;
     for(int i = 0 ; i < n - 1 ; i++){
         int id = upper_bound(a,a+n,a[i] + k - 1) - a;
