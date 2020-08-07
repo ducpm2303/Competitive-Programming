@@ -3,6 +3,13 @@
 using namespace std;
 typedef long long ll;
 set < pair < int, int > > s;
+/*
+    4
+    1 2 3
+    1
+    1 4
+    3
+*/
 void Input(){
    
 }

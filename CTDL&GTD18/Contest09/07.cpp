@@ -8,7 +8,8 @@ int n,m,s;
 void DFS(int u){
     cout << u << ' ';
     vis[u] = 1;
-    for(auto v : ke[u]){
+    for(int i = 0; i < ke[u].size(); i++){ // duyêt đỉnh kề của u.
+        int v = ke[u][i];
         if(vis[v] == 0)
             DFS(v);
     }

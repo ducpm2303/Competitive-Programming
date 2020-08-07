@@ -1,0 +1,30 @@
+Bài 1: Nhập cạnh lưu luôn dưới dạng ma trận kề 
+kết quả chỉ việc in ra các đỉnh kể của i.
+Bài 2:(có thể bỏ qua)
+    Đầu vào là các xâu, xử lý xâu tách thành các số.
+    và in ra danh sách cạnh tương ứng.
+Bài 3: Chuyển ma trận kề sang danh sách kề.
+Bài 4: 
+    Đầu vào là các xâu, xử lý xâu tách thành từng số và
+    biểu diễn sang danh sách kề.
+Bài 5:
+    Tương tự bài 1 nhưng chỉ lưu a[u][v] = 1;
+Bài 6,7,8,9:
+    Biểu diễn đồ thị dưới dạng danh sách kề.
+    sau đó duyệt DFS,BFS
+Bài 10,11,12,13:
+    Biểu diễn đồ thị dưới dạng danh sách kề.
+    Duyệt DFS,BFS nhớ lưu vết để truy vết.
+Bài 15,16:
+    Tìm số tplt
+Bài 17,18:
+    Đồ thị có hướng liên thông mạnh nếu như từ 1 đỉnh bất kì có thể đi được 
+    đến các đỉnh còn lại
+    -> Duyệt n lần BFS/DFS và kiểm tra xem có đi qua n đỉnh hay ko
+Bài 19,20:
+    Đỉnh trụ là đỉnh nếu bỏ đỉnh đó đi thì số tplt của đồ thị tăng lên 
+    -> duyệt n lần thử bỏ đỉnh in:
+    -> xóa các cạnh của các đỉnh kề với i sau đó duyệt đếm số tplt(DFS/BFS).
+    nếu số tplt mà tăng thì nó là đỉnh trụ
+    -> thêm lại các cạnh.
+

@@ -8,7 +8,8 @@ vector<int> ke[1005];
 int n,m,s,t;
 void DFS(int u){
     vis[u] = 1;
-    for(auto v : ke[u]){
+    for(int i = 0; i < ke[u].size(); i++){
+        int v = ke[u][i];
         if(vis[v] == 0){
             par[v] = u;
             DFS(v);
@@ -31,16 +32,15 @@ void Input(){
 }
 void Solve(){
     DFS(s);
-    if(par[t] != 0){
+    if(par[t] != 0){ // đỉnh t được gán nhãn
         int x = t;
         vector<int> res;
         while(x != s){
             res.push_back(x);
             x = par[x];
         }
-        reverse(res.begin(),res.end());
         cout << s << ' ';
-        for(int i = 0; i < res.size() ; i++)
+        for(int i = res.size() - 1; i >= 0 ; i--)
             cout << res[i] << ' ';
         cout << '\n';
     } else cout << -1 << '\n';

@@ -7,7 +7,8 @@ vector<int> ke[1005];
 int n,m,s;
 void DFS(int u){
     vis[u] = 1;
-    for(auto v : ke[u]){
+    for(int i = 0; i < ke[u].size(); i++){
+        int v = ke[u][i];
         if(vis[v] == 0)
             DFS(v);
     }
@@ -26,7 +27,7 @@ void Input(){
     }
 }
 void Solve(){
-    int res =0;
+    int res = 0;
     for(int i = 1; i <= n; i++){
         if(vis[i] == 0){
             DFS(i);
