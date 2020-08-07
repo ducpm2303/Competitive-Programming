@@ -8,6 +8,18 @@ int a,b,c,xd,yd,zd,xc,yc,zc;
 int dx[] = {0,0,1,-1,0,0};
 int dy[] = {1,-1,0,0,0,0};
 int dz[] = {0,0,0,0,1,-1};
+struct duc{
+    int x,y,z,t;
+};
+duc make_duc(int x,int y,int z, int t){
+    duc res;
+    res.x = x;
+    res.y = y;
+    res.z = z;
+    res.t = t;
+    return res;
+}
+
 void Input(){
     cin >> a >> b >> c;
     for(int i = 1; i <= a; i++){
@@ -33,17 +45,17 @@ bool inside(int x,int y,int z){
     return(1 <= x && x <= a && 1 <= y && y <= b && 1 <= z && z <= c);
 }
 void Solve(){
-    queue<pair<tuple<int,int,int>,int>>q;
-    q.push({make_tuple(xd,yd,zd),0});
+    queue<duc> q;
+    q.push(make_duc(xd,yd,zd,0));
     vis[xd][yd][zd] = 1;
     //cout << xc << ' ' << yc << ' ' << zc;
     int mincost = 1e9;
     while(!q.empty()){
-        tuple<int,int,int> topq = q.front().first;
-        int u = get<0>(topq);
-        int v = get<1>(topq);
-        int w = get<2>(topq);
-        int c = q.front().second;
+        duc topq = q.front();
+        int u = topq.x;
+        int v = topq.y;
+        int w = topq.z;
+        int c = topq.t;
         q.pop();
         //cout << u << ' ' << v << ' ' << w << ' ' << c << '\n';
         if(u == xc && v == yc && w == zc){
@@ -56,7 +68,7 @@ void Solve(){
             int z = w + dz[i];
             if(inside(x,y,z) && m[x][y][z] != '#' && vis[x][y][z] == 0){
                 vis[x][y][z] = 1;
-                q.push({make_tuple(x,y,z),c+1});
+                q.push(make_duc(x,y,z,c+1));
             }
         }
     }

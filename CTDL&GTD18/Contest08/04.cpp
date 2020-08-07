@@ -12,7 +12,7 @@ void Solve(){
     for(int i = 0; i < s.length(); i++){
         cnt[s[i]-'A']++;
     }
-    priority_queue<int,vector<int>> q;
+    priority_queue<int,vector<int> > q;
     for(int i = 0; i < 26; i++)
         if(cnt[i] != 0) q.push(cnt[i]);
     while(k != 0 && !q.empty()){

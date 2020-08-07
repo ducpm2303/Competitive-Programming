@@ -52,6 +52,7 @@ void xoay( data cn){
 	q.push(cn2);
 }
 void Input(){
+	while(!q.empty()) q.pop();
 	tmp.stp = 0;
 	for( int i = 0 ; i < 6; i++) cin >> tmp.a[i];
 	for( int i = 0 ; i < 6; i++) cin >> kt[i];
@@ -70,7 +71,7 @@ void Solve(){
 main(){
 	Faster();
 	int test=1;
-	//cin>>test;
+	cin>>test;
 	while(test--){
 		Input();
 		Solve();

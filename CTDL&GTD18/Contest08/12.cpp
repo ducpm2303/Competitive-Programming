@@ -1,7 +1,6 @@
 /*author : mdp*/
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
+
 using namespace std;
 typedef long long ll;
 vector<string> a;
@@ -14,8 +13,8 @@ void Input(){
 
 void Solve(){
     int m = a[0].length();
-    unordered_map<string,int> stp;
-    unordered_set<string> check(a.begin(),a.end());
+    map<string,int> stp;
+    set<string> check(a.begin(),a.end());
     queue <string> q;
     q.push(s); stp[s] = 1;
     while(!q.empty()){
