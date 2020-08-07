@@ -20,7 +20,8 @@ void BFS(int u, int s){
     while(!q.empty()){
         int u1 = q.front(); q.pop();
         //cout << u1 << ' ';
-        for(auto v : adj[u1]){
+        for(int i = 0; i < adj[u1].size(); i++){
+            int v = adj[u1][i];
             if(v == s){
                 cycle = true;
                 return;

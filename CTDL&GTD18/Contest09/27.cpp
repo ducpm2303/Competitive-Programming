@@ -7,12 +7,13 @@ int vis[1005];
 int n,m;
 bool cycle = false;
  
-void DFS(int u) {
+void DFS(int u, int s) {
     vis[u] = 1;
-    for(int v : ke[u]){
-        if (vis[v] == 0) DFS(v);
-        else if (vis[v] == 1) 
-            cycle = true; 
+    for(int i = 0 ; i <ke[u].size(); i++){
+        int v = ke[u][i];
+        if(v == s) cycle = true;
+        if (vis[v] == 0) DFS(v,s);
+
     }
 }
 void Input(){
@@ -28,7 +29,7 @@ void Input(){
 }
 void Solve(){
     for(int i = 1; i <= n; i++)
-        if(vis[i] == 0) DFS(i);
+        if(vis[i] == 0) DFS(i,i);
     
     cout << ((cycle == true)?"YES":"NO") << '\n';
 }

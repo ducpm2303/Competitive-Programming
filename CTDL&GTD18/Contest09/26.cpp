@@ -4,7 +4,7 @@ using namespace std;
 typedef long long ll;
 const int N = 1005;
 int cha[N], Rank[N];
-map <pair<int,int>,int> cnt;
+map <pair<int,int>,int > cnt;
 bool flag = 0;
 void Init() {
     for (int i=0; i<N; i++) {
@@ -31,20 +31,14 @@ void Input(){
     Init();
     for(int i = 1; i <= m; i++){
         int u,v; cin >> u >> v;
-        cnt[{u,v}]++;
-        if(Find(u) == Find(v) && u != v){
+        if(Find(u) == Find(v)){
             //cout << u << ' ' << v << '\n';
             flag = 1;
         }else join(u,v);
     }
 }
 void Solve(){
-    for(auto z : cnt){
-        if(z.second >= 2 || z.first.first == z.first.second){
-            cout << "YES" << '\n';
-            return;
-        }
-    }
+  
     cout << ((flag == 1)?"YES":"NO") << '\n';
 }
 int main(){

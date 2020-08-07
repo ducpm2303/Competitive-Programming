@@ -7,11 +7,12 @@ int vis[1005];
 int n,m;
 bool cycle = false;
  
-void DFS(int u , int s) {
+void DFS(int u ,int par) {
     vis[u] = 1;
-    for(int v : ke[u]){
+    for(int i = 0; i < ke[u].size(); i++){
+        int v = ke[u][i];
         if (vis[v] == 0) DFS(v,u);
-        else if (vis[v] == 1 && v != s) 
+        else if (vis[v] == 1 && v != par) 
             cycle = true; 
     }
 }

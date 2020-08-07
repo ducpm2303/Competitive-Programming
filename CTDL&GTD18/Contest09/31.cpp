@@ -8,7 +8,8 @@ int n,m,cnt;
 void DFS(int u){
     vis[u] = 1;
     cnt++;
-    for(auto v : ke[u]){
+    for(int i = 0; i < ke[u].size(); i++){
+        int v = ke[u][i];
         if(!vis[v]){
             DFS(v);
         }

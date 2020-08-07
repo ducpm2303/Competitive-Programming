@@ -3,6 +3,9 @@
 using namespace std;
 int n , m,vis[1001];
 vector<int> ke[1001];
+/*
+    DFS(i) / BFS(i) = n; 
+*/
 void LoadG(){
     cin >> n >> m; 
     for(int i = 1; i <= n; i++)
@@ -17,14 +20,15 @@ void reset(){
         vis[i] = 0;
 }
 int BFS(int u){
-    int cnt = 0;
+    int cnt = 0; // số đỉnh đi qua
     queue<int> q;  
     q.push(u); vis[u] = 1;
     while(!q.empty()){
         cnt++;
         int u1 = q.front() ; q.pop(); 
         //cout << u1 << ' '; 
-        for(auto v : ke[u1]){
+        for(int i = 0; i < ke[u1].size(); i++){
+            int v = ke[u1][i];
             if(vis[v] == 0){
                 vis[v] = 1;
                 q.push(v);
@@ -34,10 +38,9 @@ int BFS(int u){
     return cnt;
 }
 bool LT_manh_BFS(){
-    int res = 0;
     for(int i = 1 ; i <= n ; i++){
         reset(); 
-        if( BFS(i) != n ) return false; 
+        if(BFS(i) != n) return false; 
     }
     return true;  
 }

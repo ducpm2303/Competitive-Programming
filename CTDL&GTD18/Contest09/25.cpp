@@ -2,38 +2,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-vector<int> ke[1005];
-int vis[1005];
-int n,m;
-bool cycle = false;
- 
-void DFS(int u , int s) {
-    vis[u] = 1;
-    for(int v : ke[u]){
-        if (vis[v] == 0) DFS(v,u);
-        else if (vis[v] == 1 && v != s) 
-            cycle = true; 
+const int N = 1005;
+int cha[N], Rank[N];
+map <pair<int,int>,int > cnt;
+bool flag = 0;
+void Init() {
+    for (int i=0; i<N; i++) {
+        cha[i] = i;
+        Rank[i] = 0;
     }
 }
+
+int Find(int u) {
+    if (cha[u] != u) cha[u] = Find(cha[u]);
+    return cha[u];
+}
+void join(int u, int v) {
+    u = Find(u);
+    v = Find(v);
+    if (u == v) return;
+    if (Rank[u] == Rank[v]) Rank[u]++;
+    if (Rank[u] < Rank[v]) cha[u] = v;
+    else cha[v] = u;
+}
+int n,m;
 void Input(){
     cin >> n >> m;
-    memset(vis,0,sizeof(vis));
-    for(int i = 1; i <= n; i++){
-        ke[i].clear();
-    }
-    cycle = false;
+    Init();
     for(int i = 1; i <= m; i++){
         int u,v; cin >> u >> v;
-        if(u == v) continue;
-        ke[u].push_back(v);
-        ke[v].push_back(u);
+        if(u == v) flag = 1;
+        if(Find(u) == Find(v) && u != v){
+            //cout << u << ' ' << v << '\n';
+            flag = 1;
+        }else join(u,v);
     }
 }
 void Solve(){
-    for(int i = 1; i <= n; i++)
-        if(vis[i] == 0) DFS(i,0);
-    
-    cout << (( cycle == true)?"YES":"NO") << '\n';
+  
+    cout << ((flag == 1)?"YES":"NO") << '\n';
 }
 int main(){
     ios::sync_with_stdio(false);

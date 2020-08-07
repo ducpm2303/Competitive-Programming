@@ -11,8 +11,8 @@ void BFS(int u){
     while(!q.empty()){
         int x = q.front(); q.pop();
         cout << x << ' ';
-        for(int i = 0; i < ke[u].size(); i++){ // duyêt đỉnh kề của u.
-            int v = ke[u][i];
+        for(int i = 0; i < ke[x].size(); i++){ // duyêt đỉnh kề của u.
+            int v = ke[x][i];
             if(vis[v] == 0){
                 vis[v] = 1;
                 q.push(v);

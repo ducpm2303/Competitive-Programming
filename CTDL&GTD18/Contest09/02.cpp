@@ -2,14 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-set < pair < int, int > > s;
-/*
-    4
-    1 2 3
-    1
-    1 4
-    3
-*/
+int a[1005][1005];
 void Input(){
    
 }
@@ -23,15 +16,19 @@ void Solve(){
         str += ' ';
         int val = 0;
         for (int j = 0 ; j < str.length(); j++) {
-            if (str[j] == ' ' ) {
-                s.insert(make_pair(min(i, val), max(i, val)));
+            if (str[j] == ' ') {
+                a[i][val] = a[val][i] = 1;
                 val = 0;
             } 
             else val = val * 10 + (str[j] - '0');
         }   
     }
-    for (auto it : s) {
-        cout << it.first << " " << it.second << endl;
+    for(int i = 1; i <= n; i++){
+        for(int j = i + 1; j <= n; j++){
+            if(a[i][j] == 1){
+                cout << i << ' ' << j << '\n';
+            }
+        }
     }
 }
 int main(){

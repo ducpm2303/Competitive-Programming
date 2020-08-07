@@ -11,7 +11,7 @@ bool inside(int x,int y){
     return(1 <= x && x <= n && 1 <= y && y <= m);
 }
 void BFS(int x,int y){
-    queue<pair<int,int>> q;
+    queue<pair<int,int> > q;
     q.push({x,y});
     vis[x][y] = 1;
     while(!q.empty()){
